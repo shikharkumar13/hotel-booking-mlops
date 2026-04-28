@@ -65,6 +65,7 @@ def build_pipeline(params: dict) -> Pipeline:
     )           
 
     return Pipeline([
+        ("preprocessor", preprocessor),
         ("model", RandomForestClassifier(
             n_estimators=params["n_estimators"],
             max_depth=params["max_depth"],                                                                                                             
