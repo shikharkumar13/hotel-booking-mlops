@@ -1,12 +1,21 @@
-services:                                                                                                                                              
+services:       
   preprocess:
-    build: .                                                                                                                                           
-    entrypoint: python src/data/preprocess.py
-    volumes:                                 
-      - ./data:/app/data
-                        
-  train:
     build: .
-    volumes:
+    entrypoint: python src/data/preprocess.py
+    volumes:                                                                                                                                           
       - ./data:/app/data
+                                                                                                                                                        
+  train:        
+    build: .
+    volumes:                                                                                                                                           
+      - ./data:/app/data
+      - ./models:/app/models                                                                                                                           
+                
+  api:
+    build: .
+    entrypoint: uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:                                                                                                                                             
+      - "8001:8000"
+    volumes:                                                                                                                                           
       - ./models:/app/models
+      - ./src:/app/src
