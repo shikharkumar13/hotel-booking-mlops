@@ -1,0 +1,12 @@
+services:                                                                                                                                              
+  preprocess:
+    build: .                                                                                                                                           
+    entrypoint: python src/data/preprocess.py
+    volumes:                                 
+      - ./data:/app/data
+                        
+  train:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
