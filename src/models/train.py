@@ -47,7 +47,7 @@ NUMERICAL_FEATURES = [
     "days_in_waiting_list",
     "adr",                                                                                                                                             
     "required_car_parking_spaces",
-    "total_special_requests",
+    "total_of_special_requests",
     "total_guests",                                                                                                                                    
     "total_nights"
 ]                                                                                                                                                      
