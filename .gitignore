@@ -1,22 +1,25 @@
 # Python cache files
-__pycache__/                                                                                                                                           
-*.pyc                                                                                                                                                
+__pycache__/        
+*.pyc       
 *.pyo
-                                                                                                                                                        
+    
 # Environment files
-.env                                                                                                                                                   
-venv/                                                                                                                                                
+.env               
+venv/
 .venv/
     
 # Data and models — tracked by DVC, not Git
 data/raw/*                                                                                                                                             
-data/processed/*
-models/*                                                                                                                                               
-                                                                                                                                                    
-# MLflow server data — generated in Phase 2
-mlflow-data/                               
+!data/raw/*.dvc
+data/processed/*                                                                                                                                       
+!data/processed/*.dvc
+models/*             
+!models/*.dvc
             
-# Jupyter
+# MLflow server data — generated in Phase 2
+mlflow-data/                                                                                                                                           
+            
+# Jupyter                                                                                                                                              
 .ipynb_checkpoints/
                     
 # Mac
