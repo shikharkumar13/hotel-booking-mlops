@@ -131,7 +131,8 @@ def run():
                                                                                                                                                         
         mlflow.sklearn.log_model(
             sk_model=pipeline,                                                                                                                         
-            artifact_path="model"
+            artifact_path="model",
+            registered_model_name=EXPERIMENT_NAME
         )                                                                                                                                              
 
         joblib.dump(pipeline, MODEL_PATH)                                                                                                              
